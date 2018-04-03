@@ -1,5 +1,8 @@
+
+console.log("This is app.js");
 // Grab the articles as a json
-$.getJSON("/articles", function(data) {
+$(function() {
+  $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
@@ -40,7 +43,7 @@ $(document).on("click", "p", function() {
         $("#bodyinput").val(data.note.body);
       }
     });
-});
+  });
 
 // When you click the savenote button
 $(document).on("click", "#savenote", function() {
@@ -69,4 +72,6 @@ $(document).on("click", "#savenote", function() {
   // Also, remove the values entered in the input and textarea for note entry
   $("#titleinput").val("");
   $("#bodyinput").val("");
+});
+
 });
