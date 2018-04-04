@@ -13,16 +13,16 @@
   <div class="pl-5 pt-1 pb-1 bg-white">
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link" ><strong>Mongo Scraper</strong></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Saved Articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link active" href="/scrape">Get New Articles</a>
       </li>
     </ul>
   </div>
@@ -37,7 +37,9 @@
     <div class = "container">
       <div class = "row pt-3" id="wrapper">
           <div class="col-md-9">
-            <div id="articles"></div>
+            <div id="articles" placeholder="Go get new articles">
+              <!-- <p>Go get new articles</p> -->
+            </div>
           </div>
           <div class = "col-md-3">
             <div id="notes"></div>

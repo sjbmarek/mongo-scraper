@@ -5,6 +5,7 @@ $(function() {
   $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
+    console.log("Appending: " + i);
     // Display the apropos information on the page
     $("#articles").append("<h6 data-id='" + data[i]._id + "'>" + data[i].title + "</h6><p>" + data[i].link + "</p><hr>");
   }

@@ -66,14 +66,18 @@ app.get("/scrape", function(req, res) {
       db.Article.create(result)
       .then(function(dbArticle) {
           // View the added result in the console
+          console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
           console.log(dbArticle);
+          // window.location.href = "/";
         })
       .catch(function(err) {
           // If an error occurred, send it to the client
-          return res.json(err);
-          // return console.log(err);
+          // return res.json(err);
+          console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+          return console.log(err);
         });
     });
+    // window.location.href = "/articles";
     res.send("Scrape Complete");
   });
 });
