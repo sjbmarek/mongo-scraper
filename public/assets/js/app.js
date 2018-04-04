@@ -14,6 +14,8 @@ $(function() {
 
 // Whenever someone clicks a p tag
 $(document).on("click", "h6", function() {
+  // jQuery.noConflict(); 
+  // $("#noteplace").modal("show"); 
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
@@ -27,14 +29,17 @@ $(document).on("click", "h6", function() {
     // With that done, add the note information to the page
     .then(function(data) {
       console.log(data);
+        // jQuery.noConflict(); 
+       // $("#noteplace").modal("show"); 
       // The title of the article
-      $("#notes").append("<h2>" + data.title + "</h2>");
+      $("#notes").append("<p>Add a note about this story:</p>");
+      $("#notes").append("<h6 class = 'text-danger'>" + data.title + "</h6>");
       // An input to enter a new title
-      $("#notes").append("<input id='titleinput' name='title' >");
+      $("#notes").append("<input id='titleinput' name='title' class ='mb-2 form-control'>");
       // A textarea to add a new note body
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#notes").append("<textarea id='bodyinput' name='body' class ='mb-2 form-control' rows = '12'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
-      $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      $("#notes").append("<button type='button' class='btn btn-secondary' data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
       // If there's a note in the article
       if (data.note) {

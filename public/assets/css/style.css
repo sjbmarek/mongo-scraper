@@ -16,26 +16,26 @@
         /*float: right;*/
         /*width: 30%;*/
       }
-      textarea, input {
+/*      textarea, input {
         display: block;
         width: 100%;
-        background-color: #FCF5C7;
+        background-color: #eae9ea;
       }
       input {
         height: 36px;
-        font-size: 24px;
+        font-size: 18px;
       }
       textarea {
         height: 200px;
         font-size: 18px;
-      }
+      }*/
 
       .banner {
         background-image: url("../img/scraper.jpg");
         background-repeat: no-repeat;
         height: 380px;
         padding-bottom: 0px;
-        margin-bottom:  0px;
+        margin-bottom:  10px;
         box-shadow: 0 8px 10px lightgrey;
 
       }
