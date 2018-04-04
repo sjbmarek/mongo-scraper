@@ -4,11 +4,19 @@ console.log("This is app.js");
 $(function() {
   $.getJSON("/articles", function(data) {
   // For each one
+  // $("#articles").empty();
+  console.log("data.length: " + data.length);
   for (var i = 0; i < data.length; i++) {
     console.log("Appending: " + i);
     // Display the apropos information on the page
     $("#articles").append("<h6 data-id='" + data[i]._id + "'>" + data[i].title + "</h6><p>" + data[i].link + "</p><hr>");
-  }
+  };
+  if(data.length===0){
+    $("#getArticlesNote").append("<h4 class='text-center mx-auto'>Go get more articles.</h4>");
+    }else
+      {
+       $("#getArticlesNote").empty();
+  };
 });
 
 
@@ -35,9 +43,9 @@ $(document).on("click", "h6", function() {
       $("#notes").append("<p>Add a note about this story:</p>");
       $("#notes").append("<h6 class = 'text-danger'>" + data.title + "</h6>");
       // An input to enter a new title
-      $("#notes").append("<input id='titleinput' name='title' class ='mb-2 form-control'>");
+      $("#notes").append("<input id='titleinput' placeholder='Note Title' name='title' class ='mb-2 form-control'>");
       // A textarea to add a new note body
-      $("#notes").append("<textarea id='bodyinput' name='body' class ='mb-2 form-control' rows = '12'></textarea>");
+      $("#notes").append("<textarea id='bodyinput'placeholder='Note Content' name='body' class ='mb-2 form-control' rows = '12'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
       $("#notes").append("<button type='button' class='btn btn-secondary' data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
