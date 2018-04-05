@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Scraping With Mongoose</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Mongo Scraper</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
   <div class="pl-5 pt-1 pb-1 bg-dark">
     <ul class="nav nav-pills text-light bg-dark">
-<!--       <li class="nav-item">
-        <a class="nav-link" ><strong>Mongo Scraper</strong></a>
-      </li> -->
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link text-light" href="/">Home</a>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link text-light" href="#">Saved Articles</a>
       </li>
       <li class="nav-item">
@@ -27,24 +24,24 @@
     </ul>
   </div>
 
-    <div class = "jumbotron jumbotron-fluid banner p-0 m-0">
-      <div class="container pt-5">
-          <h1 class="text-center text-white display-4 pt-5">Mongo Scraper</h1>
-          <h4 class="text-white text-center lead"><i>~ the latest in curling news ~</i></h4>
-      </div>
+  <div class = "jumbotron jumbotron-fluid banner p-0 m-0">
+    <div class="container pt-5">
+      <h1 class="text-center text-white display-4 pt-5">Mongo Scraper</h1>
+      <h4 class="text-white text-center lead"><i>~ the latest in curling news ~</i></h4>
+    </div>
+  </div>
+
+  <div class = "row bg-danger text-light mt-3 ml-0 mr-0 p-0" id="getArticlesNote"> 
     </div>
 
-    <!-- <div class = "container"> -->
-      <div class = "row bg-danger text-light mt-3 ml-0 mr-0 p-0" id="getArticlesNote"> 
-      </div>
-       <div class = "container">
+    <div class = "container">
       <div class = "row pt-2">
-          <div class="col-md-9">
-            <div id="articles" class = "pr-2 pl-2"></div>
-          </div>
-          <div class = "col-md-3">
-            <div id="notes"></div>
-          </div>
+        <div class="col-md-9">
+          <div id="articles" class = "pr-2 pl-2"></div>
+        </div>
+        <div class = "col-md-3">
+          <div id="notes"></div>
+        </div>
       </div>
     </div>
 
@@ -67,4 +64,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
-</html>
+  </html>

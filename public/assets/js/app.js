@@ -3,8 +3,6 @@ console.log("This is app.js");
 // Grab the articles as a json
 $(function() {
   $.getJSON("/articles", function(data) {
-  // For each one
-  // $("#articles").empty();
   console.log("data.length: " + data.length);
   for (var i = 0; i < data.length; i++) {
     console.log("Appending: " + i);
