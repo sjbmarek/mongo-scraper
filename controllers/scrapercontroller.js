@@ -29,7 +29,6 @@ module.exports = function(app) {
             // View the added result in the console
             console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             console.log(dbArticle);
-            // window.location.href = "/";
           })
         .catch(function(err) {
             // If an error occurred, send it to the client
@@ -38,8 +37,12 @@ module.exports = function(app) {
             return console.log(err);
           });
       });
-      // window.location.href = "/articles";
-      res.send("Scrape Complete");
+      res.redirect("/");
+      // return console.log(res);
+      // res.json(dbArticle);
+      // res.send("Scrape Complete");
+      // location.reload();
+      // res.render(homepage);  After handlebars added
     });
   });
 
