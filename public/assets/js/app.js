@@ -119,7 +119,7 @@ $(document).on("click", ".trash", function() {
 
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
-    method: "POST",
+    method: "DELETE",
     url: "/trash/" + thisId,
     data: {
       id: thisId
@@ -127,6 +127,7 @@ $(document).on("click", ".trash", function() {
   })
     // With that done
     .then(function(data) {
+      console.log("DATATATATATATATATAT--------------");
       // Log the response
       console.log(data);
 
