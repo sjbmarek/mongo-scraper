@@ -5,42 +5,26 @@
             
             {{#each articles}}
             <!-- {{#unless devoured}} -->
-          
+            
             <div class = "row pt-2 pb-0 pr-0 pl-0 m-0">
               <div class="col-md-9 p-0 m-0">
                 <h5 data-id="{{_id}}">{{title}}</h5>
               </div>
               <div class="col-md-3 p-0 m-0">
                 <button type="button" class="change-saved btn btn-danger btn-sm float-right ml-1" data-id="{{_id}}" data-saved="{{saved}}"><i class="far fa-save"></i>&nbspSave
-               </button>
-               <button type="button" class="addNote btn btn-secondary float-right btn-sm" data-id="{{_id}}" data-saved="{{saved}}">Add Note
-               </button>
-             </div>
+                </button>
+                <button type="button" class="addNote btn btn-secondary float-right btn-sm" data-id="{{_id}}" data-saved="{{saved}}">Add Note
+                </button>
+              </div>
             </div>
             <a href = "{{link}}" target = "_blank" class = "text-secondary">{{link}}</a>
-            <!--   <button type="button" class="change-saved btn btn-danger btn-sm float-right" data-id="{{_id}}" data-saved="{{saved}}">Save Article
-              </button> -->
-              <hr>
-            
+            <hr>
             <!-- {{/unless}} -->
             {{/each}}
-
-
-
-
-
-
           </div>
         </div>
         <div class = "col-md-3">
           <div id="notes">
-            
-
-
-
-
-
-
           </div>
         </div>
       </div>

@@ -62,6 +62,7 @@ $(".addNote").on("click", function() {
 $(document).on("click", "#savenote", function() {
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
+  console.log("This id from savenote:  " +thisId);
 
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
@@ -87,4 +88,51 @@ $(document).on("click", "#savenote", function() {
   $("#bodyinput").val("");
 });
 
+
+ // Mark this article as saved
+$(document).on("click", ".change-saved", function() {
+  // Grab the id associated with the article from the submit button
+  var thisId = $(this).attr("data-id");
+  console.log("This id: " + thisId);
+
+  // Run a POST request to change the note, using what's entered in the inputs
+  $.ajax({
+    method: "POST",
+    url: "/articlessaved/" + thisId,
+    data: {
+      id: thisId
+    }
+  })
+    // With that doneSS
+    .then(function(data) {
+      // Log the response
+      console.log("This is from change-saved");
+      console.log(data);
+      
+    });
 });
+
+$(document).on("click", ".trash", function() {
+  // Grab the id associated with the article from the submit button
+  var thisId = $(this).attr("data-id");
+  console.log("This id from trash:  " + thisId);
+
+  // Run a POST request to change the note, using what's entered in the inputs
+  $.ajax({
+    method: "POST",
+    url: "/trash/" + thisId,
+    data: {
+      id: thisId
+    }
+  })
+    // With that done
+    .then(function(data) {
+      // Log the response
+      console.log(data);
+
+    });
+
+});
+
+});
+

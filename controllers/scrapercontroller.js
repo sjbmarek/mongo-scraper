@@ -23,6 +23,23 @@ module.exports = function(app) {
   });
 
 
+
+  app.get("/saved", function(req, res) {
+    console.log("Hitting /saved route");
+    db.Article.find({})
+    .then(function(found) {
+      var hbsObject = {
+       articles: found
+     };
+     console.log("HANDLEBARS OBJECT SAVED");
+     console.log(hbsObject);
+
+     res.render("saved", hbsObject);
+   });
+  });
+
+
+
   // A GET route for scraping the curl website
   app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
@@ -98,7 +115,7 @@ module.exports = function(app) {
         // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
         // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
         // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-        return db.Article.findOneAndUpdate({ _id: req.params.id }, { note: dbNote._id }, { new: true });
+        return db.Article.findOneAndUpdate({ _id: req.params.id }, {$push: {note: dbNote._id} });
       })
       .then(function(dbArticle) {
         // If we were able to successfully update an Article, send it back to the client
@@ -109,6 +126,44 @@ module.exports = function(app) {
         res.json(err);
       });
   });
+
+  app.post("/articlessaved/:id", function(req, res) {
+      console.log("We are in articels saved.");
+    // Create a new note and pass the req.body to the entry
+    db.Article.findOne({ _id: req.params.id })
+      .then(function(dbsave) {
+        // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
+        // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
+        // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+        return db.Article.findOneAndUpdate({ _id: req.params.id }, {$set{ saved: true }});
+      })
+      .then(function(dbArticle) {
+        // If we were able to successfully update an Article, send it back to the client
+        res.json(dbArticle);
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+      console.log("SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
+      console.log(dbArticle);
+  });
+
+
+    app.get("/trash/:id", function(req, res) {
+    // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+    db.Article.remove({ _id: req.params.id })
+      // ..and populate all of the notes associated with it
+      .then(function(dbArticle) {
+        // If we were able to successfully find an Article with the given id, send it back to the client
+        res.json(dbArticle);
+      })
+      .catch(function(err) {
+        // If an error occurred, send it to the client
+        res.json(err);
+      });
+  });
+
 };
 
 
