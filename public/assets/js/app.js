@@ -110,14 +110,15 @@ $(document).on("click", ".change-saved", function() {
       console.log(data);
       
     });
+
+    window.location.href = "/";
 });
 
 $(document).on("click", ".trash", function() {
-  // Grab the id associated with the article from the submit button
+  // Grab the id associated with the article from the trash button
   var thisId = $(this).attr("data-id");
   console.log("This id from trash:  " + thisId);
 
-  // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
     method: "DELETE",
     url: "/trash/" + thisId,
@@ -132,6 +133,8 @@ $(document).on("click", ".trash", function() {
       console.log(data);
 
     });
+
+    window.location.href = "/saved";
 
 });
 
