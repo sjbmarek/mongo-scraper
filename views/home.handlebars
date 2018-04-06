@@ -1,0 +1,47 @@
+    <div class = "container">
+      <div class = "row pt-2">
+        <div class="col-md-9">
+          <div id="articles" class = "pr-2 pl-2">
+            
+            {{#each articles}}
+            <!-- {{#unless devoured}} -->
+          
+            <div class = "row p-0 m-0">
+              <div class="col-md-9 p-0 m-0">
+                <h6 data-id="{{_id}}">{{title}}</h6>
+              </div>
+              <div class="col-md-3 p-0 m-0">
+                <button type="button" class="change-saved btn btn-danger btn-sm float-right ml-1" data-id="{{_id}}" data-saved="{{saved}}">Save Article
+               </button>
+               <button type="button" class="addNote btn btn-secondary float-right btn-sm" data-id="{{_id}}" data-saved="{{saved}}">Add Note
+               </button>
+             </div>
+            </div>
+            <p>{{link}}</p>
+            <!--   <button type="button" class="change-saved btn btn-danger btn-sm float-right" data-id="{{_id}}" data-saved="{{saved}}">Save Article
+              </button> -->
+              <hr>
+            
+            <!-- {{/unless}} -->
+            {{/each}}
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class = "col-md-3">
+          <div id="notes">
+            
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>

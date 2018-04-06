@@ -1,12 +1,28 @@
 
-
-
+var express = require("express");
+var app = express();
 var db = require("../models");
 var request = require("request");
 var cheerio = require("cheerio");
 
 // Routes
 module.exports = function(app) {
+
+  app.get("/", function(req, res) {
+    console.log("Hitting / route");
+    db.Article.find({})
+    .then(function(found) {
+      var hbsObject = {
+       articles: found
+     };
+     console.log("HANDLEBARS OBJECT");
+     console.log(hbsObject);
+
+     res.render("home", hbsObject);
+   });
+  });
+
+
   // A GET route for scraping the curl website
   app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
@@ -34,15 +50,13 @@ module.exports = function(app) {
             // If an error occurred, send it to the client
             // return res.json(err);
             console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-            return console.log(err);
+            // return console.log(err);
+            return 
           });
       });
       res.redirect("/");
-      // return console.log(res);
-      // res.json(dbArticle);
-      // res.send("Scrape Complete");
-      // location.reload();
-      // res.render(homepage);  After handlebars added
+ 
+      // res.render("home", hbsObject); 
     });
   });
 
