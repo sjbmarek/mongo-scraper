@@ -2,20 +2,20 @@
 console.log("This is app.js");
 // Grab the articles as a json
 $(function() {
-//   $.getJSON("/articles", function(data) {
-//   console.log("data.length: " + data.length);
-//   // for (var i = 0; i < data.length; i++) {
-//   //   console.log("Appending: " + i);
-//   //   // Display the apropos information on the page
-//   //   $("#articles").append("<h6 data-id='" + data[i]._id + "'>" + data[i].title + "</h6><p>" + data[i].link + "</p><hr>");
-//   // };
-//   if(data.length===0){
-//     $("#getArticlesNote").append("<h4 class='text-center mx-auto'>Go get more articles.</h4>");
-//     }else
-//       {
-//        $("#getArticlesNote").empty();
-//   };
-// });
+  $.getJSON("/articles", function(data) {
+  console.log("data.length: " + data.length);
+  // for (var i = 0; i < data.length; i++) {
+  //   console.log("Appending: " + i);
+  //   // Display the apropos information on the page
+  //   $("#articles").append("<h6 data-id='" + data[i]._id + "'>" + data[i].title + "</h6><p>" + data[i].link + "</p><hr>");
+  // };
+  if(data.length===0){
+    $("#getArticlesNote").append("<h4 class='text-center mx-auto'>Go get more articles.</h4>");
+    }else
+      {
+       $("#getArticlesNote").empty();
+  };
+});
 
 
 // Whenever someone clicks a p tag
