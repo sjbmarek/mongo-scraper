@@ -23,3 +23,9 @@
         text-align: center;
         width:100%;
       }
+
+      .notespace {
+        /*background-color: #f38f992e;*/
+        background-color: #e2e0df;
+        line-height: 9px;
+      }

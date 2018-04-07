@@ -17,12 +17,20 @@
               </div>
             </div>
             <a href = "{{link}}" target = "_blank" class = "text-secondary">{{link}}</a>
-            <hr>
-        <!--     {{#each notes}}
-            <h6 data-id="{{note}}">{{title}}</h6>
-            <p data-id="{{_id}}">{{body}}</p>
+            <hr class = "pb-0">
+            <div class = "row pt-3 pr-4 pl-4 notespace">
+              <p>Notes:</p>
+                <div class="col-md-1"></div>
+                <div class="col-md-11">
+                  {{#each note}}
 
-            {{/each}} -->
+
+                  <h6><i class="far fa-clipboard"></i>&nbsp{{title}}</h6>
+                  <p class = "font-weight-light pl-4">{{body}}</p>
+
+                  {{/each}}
+                </div>
+            </div>
             {{/if}}
             {{/each}}
 

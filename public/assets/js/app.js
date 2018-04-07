@@ -111,7 +111,7 @@ $(document).on("click", ".change-saved", function() {
       
     });
 
-    window.location.href = "/";
+    // window.location.href = "/";
 });
 
 $(document).on("click", ".trash", function() {
@@ -134,7 +134,7 @@ $(document).on("click", ".trash", function() {
 
     });
 
-    window.location.href = "/saved";
+    window.location.reload();
 
 });
 
