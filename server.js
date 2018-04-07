@@ -40,7 +40,8 @@ mongoose.Promise = Promise;
 //   useMongoClient: true
 // });
 
-mongoose.connect("mongodb://localhost/mongoscraper");
+// mongoose.connect("mongodb://localhost/mongoscraper");
+mongoose.connect("mongodb://heroku_bqlphdj8:a6dejfk344q41g8s5ve31v27r2@ds243325.mlab.com:43325/heroku_bqlphdj8");
 
 require("./controllers/scrapercontroller.js")(app);
 
